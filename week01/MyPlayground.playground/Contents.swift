@@ -40,3 +40,4 @@ func generateRandomEmojiPattern(count: Int) {
 
 
 generateRandomEmojiPattern(count: 5)
+
