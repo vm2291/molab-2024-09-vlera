@@ -1,3 +1,5 @@
+//  SleepScheduler 2.0 - added seconds for more accuracy and also added app storage  as one of the homework requirements
+
 import SwiftUI
 
 struct ContentView: View {
@@ -16,6 +18,7 @@ struct ContentView: View {
                     .font(.headline)
                     .padding()
 
+                
                 DatePicker("Wake Up Time", selection: $wakeUpTime, displayedComponents: .hourAndMinute)
                     .datePickerStyle(WheelDatePickerStyle())
                     .labelsHidden()
@@ -41,7 +44,8 @@ struct ContentView: View {
     var formattedSleepDuration: String {
         let hours = Int(sleepDuration) / 3600
         let minutes = Int(sleepDuration) % 3600 / 60
-        return String(format: "%d hours %02d minutes", hours, minutes)
+        let seconds = Int(sleepDuration) % 60
+        return String(format: "%d hours %02d minutes %02d seconds", hours, minutes, seconds)
     }
 
     func updateTime() {
