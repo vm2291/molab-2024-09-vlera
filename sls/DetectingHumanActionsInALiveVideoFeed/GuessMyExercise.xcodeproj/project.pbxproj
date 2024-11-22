@@ -43,7 +43,6 @@
 		4A2D23BF22BB70E500494C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA5C4B722BB9CC200277977 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		50E5D800247B932E00A25665 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
-		57C02DF057C02B4000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7EFFBC4008F114FF6A77F64 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		DF120B2B2565F89F003ABE6E /* ExerciseClassifier+PredictAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+PredictAction.swift"; sourceTree = "<group>"; };
 		DF20C7352578044800C9DB98 /* Pose+Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pose+Landmark.swift"; sourceTree = "<group>"; };
@@ -78,7 +77,6 @@
 		4A2D23A522BB70E400494C55 = {
 			isa = PBXGroup;
 			children = (
-				57C02DF057C02B4000000001 /* README.md */,
 				4A2D23B022BB70E400494C55 /* GuessMyExercise */,
 				4A2D23AF22BB70E400494C55 /* Products */,
 				E8C7BE0DE8736748F8673979 /* Configuration */,
