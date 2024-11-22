@@ -33,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12E34EC925104636003C138C /* GuessMyExercise.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GuessMyExercise.entitlements; sourceTree = "<group>"; };
+		12E34EC925104636003C138C /* sls.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = sls.entitlements; sourceTree = "<group>"; };
 		4A2D23AE22BB70E400494C55 /* Guess My Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess My Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2D23B122BB70E400494C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A2D23B522BB70E400494C55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		4A2D23A522BB70E400494C55 = {
 			isa = PBXGroup;
 			children = (
-				4A2D23B022BB70E400494C55 /* GuessMyExercise */,
+				4A2D23B022BB70E400494C55 /* sls */,
 				4A2D23AF22BB70E400494C55 /* Products */,
 				E8C7BE0DE8736748F8673979 /* Configuration */,
 				CC72525E56AA0CF9B92F2E67 /* LICENSE */,
@@ -92,7 +92,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4A2D23B022BB70E400494C55 /* GuessMyExercise */ = {
+		4A2D23B022BB70E400494C55 /* sls */ = {
 			isa = PBXGroup;
 			children = (
 				4AFBF15222CC9A1300A4B11A /* Video Capture */,
@@ -103,7 +103,7 @@
 				6594E5192345489C00D3C44D /* App */,
 				DFE2078A25B0AA7C00FB76EF /* Utility */,
 			);
-			path = GuessMyExercise;
+			path = sls;
 			sourceTree = "<group>";
 		};
 		4AFBF15222CC9A1300A4B11A /* Video Capture */ = {
@@ -138,7 +138,7 @@
 				4A2D23BA22BB70E500494C55 /* Assets.xcassets */,
 				4A2D23B122BB70E400494C55 /* AppDelegate.swift */,
 				4A2D23BC22BB70E500494C55 /* LaunchScreen.storyboard */,
-				12E34EC925104636003C138C /* GuessMyExercise.entitlements */,
+				12E34EC925104636003C138C /* sls.entitlements */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -450,11 +450,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = GuessMyExercise/App/GuessMyExercise.entitlements;
+				CODE_SIGN_ENTITLEMENTS = sls/App/sls.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P346X7Y7H9;
-				INFOPLIST_FILE = GuessMyExercise/App/Info.plist;
+				INFOPLIST_FILE = sls/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,11 +477,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = GuessMyExercise/App/GuessMyExercise.entitlements;
+				CODE_SIGN_ENTITLEMENTS = sls/App/sls.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P346X7Y7H9;
-				INFOPLIST_FILE = GuessMyExercise/App/Info.plist;
+				INFOPLIST_FILE = sls/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
