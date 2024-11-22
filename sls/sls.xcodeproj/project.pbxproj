@@ -80,7 +80,7 @@
 				4A2D23B022BB70E400494C55 /* sls */,
 				4A2D23AF22BB70E400494C55 /* Products */,
 				E8C7BE0DE8736748F8673979 /* Configuration */,
-				CC72525E56AA0CF9B92F2E67 /* LICENSE */,
+				CC72525E56AA0CF9B92F2E67 /* License */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,12 +153,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CC72525E56AA0CF9B92F2E67 /* LICENSE */ = {
+		CC72525E56AA0CF9B92F2E67 /* License */ = {
 			isa = PBXGroup;
 			children = (
 				A7EFFBC4008F114FF6A77F64 /* LICENSE.txt */,
 			);
-			path = LICENSE;
+			path = License;
 			sourceTree = "<group>";
 		};
 		DF141726255E0E2B007498A9 /* Video Processing Chain */ = {
