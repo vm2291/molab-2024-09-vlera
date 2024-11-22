@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A2D23AD22BB70E400494C55"
-               BuildableName = "Guess My Exercise.app"
-               BlueprintName = "Guess My Exercise"
+               BuildableName = "sls.app"
+               BlueprintName = "sls"
                ReferencedContainer = "container:sls.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A2D23AD22BB70E400494C55"
-            BuildableName = "Guess My Exercise.app"
-            BlueprintName = "Guess My Exercise"
+            BuildableName = "sls.app"
+            BlueprintName = "sls"
             ReferencedContainer = "container:sls.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A2D23AD22BB70E400494C55"
-            BuildableName = "Guess My Exercise.app"
-            BlueprintName = "Guess My Exercise"
+            BuildableName = "sls.app"
+            BlueprintName = "sls"
             ReferencedContainer = "container:sls.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

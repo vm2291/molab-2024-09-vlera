@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		12E34EC925104636003C138C /* sls.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = sls.entitlements; sourceTree = "<group>"; };
-		4A2D23AE22BB70E400494C55 /* Guess My Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess My Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2D23AE22BB70E400494C55 /* sls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2D23B122BB70E400494C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A2D23B522BB70E400494C55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4A2D23B822BB70E400494C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		4A2D23AF22BB70E400494C55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A2D23AE22BB70E400494C55 /* Guess My Exercise.app */,
+				4A2D23AE22BB70E400494C55 /* sls.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4A2D23AD22BB70E400494C55 /* Guess My Exercise */ = {
+		4A2D23AD22BB70E400494C55 /* sls */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A2D23C222BB70E500494C55 /* Build configuration list for PBXNativeTarget "Guess My Exercise" */;
+			buildConfigurationList = 4A2D23C222BB70E500494C55 /* Build configuration list for PBXNativeTarget "sls" */;
 			buildPhases = (
 				508470A123DD7B700030E9C7 /* Headers */,
 				4A2D23AA22BB70E400494C55 /* Sources */,
@@ -222,9 +222,9 @@
 			);
 			dependencies = (
 			);
-			name = "Guess My Exercise";
+			name = sls;
 			productName = GuessMyExercise;
-			productReference = 4A2D23AE22BB70E400494C55 /* Guess My Exercise.app */;
+			productReference = 4A2D23AE22BB70E400494C55 /* sls.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +256,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A2D23AD22BB70E400494C55 /* Guess My Exercise */,
+				4A2D23AD22BB70E400494C55 /* sls */,
 			);
 		};
 /* End PBXProject section */
@@ -509,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A2D23C222BB70E500494C55 /* Build configuration list for PBXNativeTarget "Guess My Exercise" */ = {
+		4A2D23C222BB70E500494C55 /* Build configuration list for PBXNativeTarget "sls" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A2D23C322BB70E500494C55 /* Debug */,
