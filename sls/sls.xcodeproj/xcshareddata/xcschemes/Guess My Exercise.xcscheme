@@ -17,7 +17,7 @@
                BlueprintIdentifier = "4A2D23AD22BB70E400494C55"
                BuildableName = "Guess My Exercise.app"
                BlueprintName = "Guess My Exercise"
-               ReferencedContainer = "container:GuessMyExercise.xcodeproj">
+               ReferencedContainer = "container:sls.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "4A2D23AD22BB70E400494C55"
             BuildableName = "Guess My Exercise.app"
             BlueprintName = "Guess My Exercise"
-            ReferencedContainer = "container:GuessMyExercise.xcodeproj">
+            ReferencedContainer = "container:sls.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "4A2D23AD22BB70E400494C55"
             BuildableName = "Guess My Exercise.app"
             BlueprintName = "Guess My Exercise"
-            ReferencedContainer = "container:GuessMyExercise.xcodeproj">
+            ReferencedContainer = "container:sls.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
