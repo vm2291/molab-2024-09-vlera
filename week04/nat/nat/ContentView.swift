@@ -11,7 +11,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                Text("Relax with Nature")
+                Text("Nature Along")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
@@ -33,6 +33,7 @@ struct MainView: View {
             }
             .padding()
             .navigationTitle("Home Page")
+            .padding()
         }
     }
 }
