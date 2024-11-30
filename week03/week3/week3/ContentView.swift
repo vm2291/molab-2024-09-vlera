@@ -52,7 +52,7 @@ struct ContentView: View {
             .rotationEffect(.degrees(Double.random(in: 0...360)))
     }
 
-    // Moon shapes
+    // Moon shape
     func moonShape() -> some View {
         ZStack {
             Circle()
