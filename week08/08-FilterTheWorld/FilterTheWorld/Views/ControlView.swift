@@ -5,8 +5,8 @@ struct ControlView: View {
     @Binding var monoSelected: Bool
     @Binding var crystalSelected: Bool
     @Binding var otherSelected: Bool
-    @Binding var sepiaSelected: Bool  // New filter binding
-    @Binding var pixellateSelected: Bool  // New filter binding
+    @Binding var sepiaSelected: Bool  // New filter
+    @Binding var pixellateSelected: Bool  // New filter 
     @Binding var drawingSelected: Bool  // New Filter
     @Binding var vignetteSelected: Bool  // New Filter
 
@@ -22,9 +22,9 @@ struct ControlView: View {
             .padding(.bottom, 10)
             HStack(spacing: 12) {
                 ToggleButton(selected: $sepiaSelected, label: "Sepia")  // New button
-                ToggleButton(selected: $pixellateSelected, label: "Pixellate")  // New button
+                ToggleButton(selected: $pixellateSelected, label: "Pixel")  // New button
               ToggleButton(selected: $drawingSelected, label: "Drawing")  // New Button
-              ToggleButton(selected: $vignetteSelected, label: "Vignette")  // New Button
+              ToggleButton(selected: $vignetteSelected, label: "Vignet")  // New Button
             }
         }
     }
