@@ -4,24 +4,24 @@ struct ContentView: View {
     @State private var wakeUpTime = Date()
     @State private var currentTime = Date()
     @State private var sleepDuration: TimeInterval = 0
-    @State private var countdownStartTime: Date? // Tracks when the countdown starts
-    @State private var countdownDuration: TimeInterval? // Tracks the duration of the set sleep
-    @State private var isDurationSet = false // Tracks if the duration was set
+    @State private var countdownStartTime: Date?
+    @State private var countdownDuration: TimeInterval?
+    @State private var isDurationSet = false
 
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                // Header
+                
                 Text("Sleep Scheduler")
                     .font(.largeTitle)
                     .padding()
 
-                // Display Current Time
+                //Current Time
                 Text("Current Time: \(currentTime, formatter: DateFormatter.timeFormatter)")
                     .font(.headline)
                     .padding()
 
-                // Wake-Up Time Picker
+                //Time Picker
                 DatePicker("Wake Up Time", selection: $wakeUpTime, displayedComponents: .hourAndMinute)
                     .datePickerStyle(WheelDatePickerStyle())
                     .labelsHidden()
@@ -30,16 +30,16 @@ struct ContentView: View {
                         calculateSleepDuration()
                     }
 
-                // Display Sleep Duration
+                //Sleep Duration
                 Text("Sleep Duration: \(formattedSleepDuration)")
                     .font(.title)
                     .padding()
 
                 // Set Sleep Duration Button
                 Button(action: {
-                    countdownStartTime = Date() // Set the current time as the start time
-                    countdownDuration = sleepDuration // Lock the selected duration for the countdown
-                    isDurationSet = true // Mark the duration as set
+                    countdownStartTime = Date()
+                    countdownDuration = sleepDuration
+                    isDurationSet = true
                 }) {
                     Text(isDurationSet ? "Update Sleep Duration" : "Set This Sleep Duration")
                         .foregroundColor(.white)
@@ -50,7 +50,7 @@ struct ContentView: View {
                 }
                 .padding()
 
-                // Feedback Message
+                // Feedback
                 if isDurationSet {
                     Text("Duration was set!")
                         .font(.headline)
@@ -58,7 +58,7 @@ struct ContentView: View {
                         .padding(.top, 5)
                 }
 
-                // Navigation Link to Countdown Page
+                // Link to Countdown Page
                 if let countdownStartTime = countdownStartTime, let countdownDuration = countdownDuration {
                     NavigationLink(
                         destination: CountdownView(startTime: countdownStartTime, duration: countdownDuration)

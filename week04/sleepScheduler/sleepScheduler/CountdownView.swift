@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct CountdownView: View {
-    let startTime: Date // Locked start time
-    let duration: TimeInterval // Locked duration
+    let startTime: Date
+    let duration: TimeInterval 
     @State private var remainingTime: TimeInterval = 0
     @State private var timer: Timer?
 
