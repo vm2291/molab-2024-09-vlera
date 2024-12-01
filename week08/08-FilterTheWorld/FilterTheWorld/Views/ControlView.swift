@@ -22,8 +22,8 @@ struct ControlView: View {
             .padding(.bottom, 10)
             HStack(spacing: 12) {
                 ToggleButton(selected: $sepiaSelected, label: "Sepia")  // New button
-                ToggleButton(selected: $pixellateSelected, label: "Pixel")  // New button
-              ToggleButton(selected: $drawingSelected, label: "Drawing")  // New Button
+                ToggleButton(selected: $pixellateSelected, label: "Pixellate")  // New button
+              ToggleButton(selected: $drawingSelected, label: "Sketch")  // New Button
               ToggleButton(selected: $vignetteSelected, label: "Vignet")  // New Button
             }
         }
