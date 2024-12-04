@@ -22,18 +22,19 @@ struct CountdownView: View {
                     .ignoresSafeArea()
             }
 
-            VStack {
-                Text("Sleep Duration Countdown")
-                    .font(.system(size: 45))
-                    .foregroundColor(.white)
-                    .padding()
+            VStack(spacing: 10) {
+                VStack(spacing: 5) {
+                    Text("Sleep Duration Countdown")
+                        .font(.headline)
+                        .foregroundColor(.white)
 
-                Text(timeString(time: remainingTime))
-                    .font(.system(size: 60))
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black.opacity(0.6))
-                    .cornerRadius(10)
+                    Text(timeString(time: remainingTime))
+                        .font(.system(size: 60))
+                        .foregroundColor(.white)
+                }
+                .padding()
+                .background(Color.black.opacity(0.6))
+                .cornerRadius(10)
 
                 Button(action: stopAndLogSleep) {
                     Text("Stop and Log Sleep")
@@ -44,7 +45,6 @@ struct CountdownView: View {
                 }
                 .padding()
             }
-            .padding()
 
             HStack {
                 Spacer()
@@ -121,4 +121,5 @@ struct CountdownView: View {
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
 }
+
 

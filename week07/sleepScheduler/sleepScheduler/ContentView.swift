@@ -9,7 +9,7 @@ struct ContentView: View {
     @State private var isSleepDurationSet = false
     @State private var feedbackMessage: String?
 
-    @State private var sleepLogs: [SleepLog] = [] // Local list of sleep logs
+    @State private var sleepLogs: [SleepLog] = []
 
     var body: some View {
         NavigationView {
