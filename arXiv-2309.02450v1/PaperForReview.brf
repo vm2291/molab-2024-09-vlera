@@ -1,0 +1,61 @@
+\backcite {ethnologue}{{1}{1}{section.1}}
+\backcite {yin2021including}{{1}{1}{section.1}}
+\backcite {Li2020WLASL}{{1}{1}{figure.caption.1}}
+\backcite {chen2022simple,muller2022findings,shi2022ttic}{{1}{1}{figure.caption.2}}
+\backcite {brentari1998prosodic}{{1}{1}{figure.caption.2}}
+\backcite {sehyr2021asllex}{{1}{1}{figure.caption.2}}
+\backcite {Shi2022OpenASL}{{2}{2}{figure.caption.2}}
+\backcite {pan2021videomoco,Kuang_2021_ICCV,Ranasinghe2021SVT}{{2}{1}{figure.caption.2}}
+\backcite {Tong2022VideoMAE,Wang2021BEVT,Wei2022MaskFeat}{{2}{1}{figure.caption.2}}
+\backcite {Tong2022VideoMAE}{{2}{1}{figure.caption.2}}
+\backcite {Wei2022MaskFeat}{{2}{1}{figure.caption.2}}
+\backcite {Wang2021BEVT}{{2}{1}{figure.caption.2}}
+\backcite {Ranasinghe2021SVT}{{2}{1}{figure.caption.2}}
+\backcite {carreira2017quo}{{2}{2.1}{subsection.2.1}}
+\backcite {hara2017learning}{{2}{2.1}{subsection.2.1}}
+\backcite {xie2018rethinking}{{2}{2.1}{subsection.2.1}}
+\backcite {Albanie2020BSL1K, Varol2021BSL1KImp, zuo2023natural}{{2}{2.1}{subsection.2.1}}
+\backcite {jiang2021skeleton, jiang2021sign, Dafnis2022Bidirectional}{{2}{2.1}{subsection.2.1}}
+\backcite {carreira2017quo}{{2}{2.1}{subsection.2.1}}
+\backcite {Albanie2020BSL1K, Varol2021BSL1KImp, Novopoltsev2023Finetuning}{{2}{2.1}{subsection.2.1}}
+\backcite {kezar2023improving}{{2}{2.1}{subsection.2.1}}
+\backcite {zuo2023natural}{{2}{2.1}{subsection.2.1}}
+\backcite {Novopoltsev2023Finetuning}{{2}{2.1}{subsection.2.1}}
+\backcite {Tong2022VideoMAE, feichtenhofer2022maest, Wang2023VideoMAE2}{{2}{2.2}{subsection.2.2}}
+\backcite {caron2021emerging}{{2}{2.2}{subsection.2.2}}
+\backcite {Ranasinghe2021SVT, wang2022mvd}{{2}{2.2}{subsection.2.2}}
+\backcite {Wei2022MaskFeat, sun2023mme}{{2}{2.2}{subsection.2.2}}
+\backcite {devlin2018bert}{{2}{2.2}{subsection.2.2}}
+\backcite {Wang2021BEVT, tan2021VIMPAC}{{2}{2.2}{subsection.2.2}}
+\backcite {Tong2022VideoMAE}{{2}{2.2}{subsection.2.2}}
+\backcite {Ranasinghe2021SVT}{{2}{2.2}{subsection.2.2}}
+\backcite {Wei2022MaskFeat}{{2}{2.2}{subsection.2.2}}
+\backcite {Wang2021BEVT}{{2}{2.2}{subsection.2.2}}
+\backcite {dosovitskiy2020image}{{2}{2.2}{subsection.2.2}}
+\backcite {vaswani2017attention}{{2}{2.2}{subsection.2.2}}
+\backcite {liu2022video}{{2}{2.2}{subsection.2.2}}
+\backcite {fan2021multiscale, li2022mvitv2}{{2}{2.2}{subsection.2.2}}
+\backcite {Tong2022VideoMAE}{{3}{3}{section.3}}
+\backcite {Ranasinghe2021SVT}{{3}{3}{section.3}}
+\backcite {tarvainen2017mean}{{3}{3}{section.3}}
+\backcite {Wei2022MaskFeat}{{3}{3}{section.3}}
+\backcite {Wang2021BEVT}{{3}{3}{section.3}}
+\backcite {sharma2018conceptual}{{3}{3}{section.3}}
+\backcite {ramesh2021zero}{{3}{3}{section.3}}
+\backcite {carreira2017quo}{{3}{4.1}{subsection.4.1}}
+\backcite {Shi2022OpenASL}{{3}{4.1}{subsection.4.1}}
+\backcite {Li2020WLASL}{{3}{4.1}{subsection.4.1}}
+\backcite {Dafnis2022Bidirectional}{{3}{4.1}{subsection.4.1}}
+\backcite {neidle2022alternative}{{3}{4.1}{subsection.4.1}}
+\backcite {brentari2019sign}{{3}{4.1}{subsection.4.1}}
+\backcite {sehyr2021asllex}{{3}{4.1}{subsection.4.1}}
+\backcite {tavella2022wlasl,kezar2023improving}{{3}{4.1}{subsection.4.1}}
+\backcite {pasad2021layer,ji2022predicting,pasad2023comparative}{{4}{4.3}{subsection.4.3}}
+\backcite {Dafnis2022Bidirectional}{{4}{5.1}{subsection.5.1}}
+\backcite {Albanie2020BSL1K, Varol2021BSL1KImp}{{4}{5.1}{subsection.5.1}}
+\backcite {pasad2021layer}{{5}{5.2}{figure.caption.7}}
+\backcite {caron2021emerging}{{7}{5.2}{figure.caption.7}}
+\backcite {Tong2022VideoMAE}{{7}{5.2}{figure.caption.7}}
+\backcite {pasad2021layer}{{8}{5.2}{figure.caption.7}}
+\backcite {Novopoltsev2023Finetuning}{{11}{\caption@xref {??}{ on input line 13}}{table.caption.9}}
+\backcite {jiang2021skeleton}{{11}{A}{appendix.A}}

@@ -1,0 +1,159 @@
+\section{Experimental Results}
+\label{sec:experimental-results}
+
+\subsection{Fine-Tuning}
+\label{sec:experimental-results-fine-tuning}
+
+Our fine-tuning results can be found in Table~\ref{tab:wlasl-performance}. We include the results of pose-based Bi-GCN on gloss-based WLASL2000, as reported in~\cite{Dafnis2022Bidirectional}, which is state of the art in the gloss-based setup. Additionally, we report results from video-based I3D models with supervised pre-training~\cite{Albanie2020BSL1K, Varol2021BSL1KImp}, which is state of the art on the original WLASL2000 with publicly available datasets and without additional signals, and that we train on gloss-based WLASL2000 for this paper.
+
+We can see in Table~\ref{tab:wlasl-performance} that there is no clear superior pre-training dataset combination across all models and pre-training tasks. Both models that deal with reconstruction over masked regions, VideoMAE and MaskFeat, benefit from the combination of Kinetics and OpenASL. However, they favour different datasets in our single-dataset setting, albeit with similar behaviour for their respective performances. In the case of VideoMAE, OpenASL pre-training achieves much lower accuracy than that of Kinetics400 pre-training (16.19 vs. 67.25), and the benefit of our two-stage pretraining results in an increase of 2.07 after pre-training on both Kinetics400 and OpenASL. For MaskFeat, this is inverted: Kinetics400-only pre-training yields an accuracy of 12.50, much lower than OpenASL-only at 74.68. Two-stage pre-training pushes this number further, up to 79.02, 4.34 points above the best single-dataset MaskFeat. We hypothesize that these differences can be at least partially attributable to the pre-training objective. HOG may allow the model to mitigate the less-relevant variation over pixels, while focusing on aspects that are more important to sign language and are captured by HOG, especially shapes.
+
+\begin{table}[]
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Model} & \textbf{Pre-Training} & \textbf{Top 1 Acc.} \\
+\hline
+\textit{Bi-GCN} & \textit{Pose} & \textit{77.43} \\
+\textit{I3D} & \textit{K400 (Sup.)} & \textit{55.02} \\
+\textit{I3D} & \textit{BSL-1K (Sup.)} & \textit{67.60} \\
+\hline
+VideoMAE & No Pre-Training & 0.47 \\
+VideoMAE & K400 & 67.25 \\
+VideoMAE & OpenASL & 16.19 \\
+VideoMAE & Two-Stage & 69.32 \\
+VideoMAE & Mixed & 59.28 \\
+\hline
+SVT & No Pre-Training & 8.52 \\
+SVT & K400 & 19.34 \\
+SVT & OpenASL & 13.36 \\
+SVT & Two-Stage & 16.06 \\
+SVT & Mixed & 11.22 \\
+\hline
+MaskFeat & No Pre-Training & 1.17 \\
+MaskFeat & K400 & 12.50 \\
+MaskFeat & OpenASL & 74.68 \\
+\textbf{MaskFeat} & \textbf{Two-Stage} & \textbf{79.02} \\
+MaskFeat & Mixed & 75.74 \\
+\hline
+BEVT & No Pre-Training & 0.47 \\
+BEVT & K400 & 53.07 \\
+BEVT & OpenASL & 60.73 \\
+BEVT & Two-Stage & 58.69 \\
+BEVT & Mixed & 59.63 \\
+\hline
+\end{tabular}
+\caption{Top 1 accuracy on gloss-based WLASL2000 after fine-tuning for various models and pre-training datasets. Bi-GCN and I3D in \textit{italics} are supervised classification pre-training and pose-based baselines for reference. We take the best-performing word-based WLASL I3D setups and train them for gloss-based WLASL instead. Best performing model in \textbf{bold}. Two-Stage refers to our configuration where a model is first pre-trained with Kinetics400 and then pre-trained with OpenASL, and Mixed refers to our configuration where a model is trained on both Kinetics400 and OpenASL at the same time.}
+\label{tab:wlasl-performance}
+\end{table}
+
+On the other hand, BEVT performs worse when combining both Kinetics400 and OpenASL, and the best performance is obtained through OpenASL pre-training only. Since the dVAE used in BEVT is frozen and obtained from training over a more diverse set of images, the addition of Kinetics400 leads to optimizing over code word labels that are entirely irrelevant to the task of ISLR, especially since Kinetics400 is larger than OpenASL. This, in turn, diminishes the final accuracy of BEVT, though not by much (60.73 for OpenASL only, and 58.69 for two-stage pre-training or 59.63 for mixed pre-training).
+
+Lastly, SVT does not achieve comparable performance to our baselines under any setting. This is likely a product of its pre-training procedure: it is not necessarily meaningful to map a global view of a sentence in ASL to a smaller slice, especially across time, of the same sentence (which could be a single sign, or a few sign within the sentence). Therefore, it only manages to reach 19.34 accuracy with Kinetics400, with any OpenASL deteriorating its performance further.
+
+We also find that no model benefits from mixed pre-training from scratch. The reason is model-dependent, but we see this happen across the board. For VideoMAE, we find that mixed pre-training performs significantly worse than both Kinetics400-only and two-stage pre-training. This suggests that VideoMAE benefits from first having a diverse enough set of videos and then narrowing down the domain to sign language in the second stage, as opposed to having a single dataset where sign language is highly represented. For SVT, any inclusion of sign language data deteriorates performance significantly. The case of MaskFeat is similar to the case of VideoMAE, but the improvement found from including Kinetics400 is not as significant as in VideoMAE. For BEVT, mixed pre-training deteriorates performance in comparison to OpenASL as a product of adding unrelated data to the training process, which is also found in the deterioration found in two-stage pre-training.
+
+Some of our models surpass current state-of-the-art I3Ds in ISLR, in particular VideoMAE, pre-trained on Kinetics400 and OpenASL, and MaskFeat, pre-trained on both OpenASL alone and on Kinetics400 and OpenASL, using only a quarter of the frames used in I3D and without requiring additional supervision. Even more so, MaskFeat, on Kinetics400 and OpenASL, manages to perform better than Bi-GCN, which not only relies on external pose estimation, but also uses 150 timesteps for classification.
+
+\subsection{Linear Probing}
+\label{sec:experimental-results-linear-probing}
+
+\begin{figure}
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/majorlocation-nox.pgf}
+        \caption{Major Location (5 classes)}
+        \label{fig:probing-maj-loc}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/minorlocation-nox.pgf}
+        \caption{Minor Location (35 classes)}
+        \label{fig:probing-min-loc}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/handshape-nox.pgf}
+        \caption{Handshape (49 classes)}
+        \label{fig:probing-handshape}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/selectedfinger-nox.pgf}
+        \caption{Selected Finger (10 classes)}
+        \label{fig:probing-sel-finger}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/pathmovement.pgf}
+        \caption{Path Movement (8 classes)}
+        \label{fig:probing-path-mov}
+    \end{subfigure}
+    \centering
+    \renewcommand\sffamily{}
+    \input{figures/probing-legend.pgf}
+    \caption{Linear probing accuracy of pre-trained models across layers on select phonological features. Note the different y-axis scales for different features.}
+    \label{fig:probing}
+\end{figure}
+
+\begin{figure*}
+    \caption*{\hspace{0.5in} Before Fine-Tuning \hspace{2in} After Fine-Tuning}
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/comparison-minorlocation-nox.pgf}
+        \caption{Minor Location (35 classes)}
+        \label{fig:comparison-min-loc}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/comparison-handshape-nox.pgf}
+        \caption{Handshape (49 classes)}
+        \label{fig:comparison-handshape}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \renewcommand\sffamily{}
+        \input{figures/comparison-pathmovement.pgf}
+        \caption{Path Movement (8 classes)}
+        \label{fig:comparison-path-mov}
+    \end{subfigure}
+    
+    \centering
+    \renewcommand\sffamily{}
+    \input{figures/comparison-legend.pgf}
+    \caption{Comparison between pre-trained and fine-tuned models on select phonological features. Figures on the left are before fine-tuning and figures on the right are after fine-tuning. For our naive baseline, we take a model that predicts the most common label in the training set at all times.}
+    \label{fig:comparison}
+\end{figure*}
+
+We evaluate each model based on the setting that achieves best fine-tuning accuracy on gloss-based WLASL2000, described in Section~\ref{sec:experimental-results-fine-tuning}. For our naive baseline, we take a model that predicts the most common label in the training set at all times. Thus, for VideoMAE we take the model with two-stage pre-training, for SVT we take the one with Kinetics400-only pre-training, for MaskFeat we take the one with two-stage pre-training, and for BEVT we take the model with OpenASL-only pre-training.
+
+We first analyze the results of our linear probing experiment on the encoders of our chosen models before fine-tuning. Figure~\ref{fig:probing} shows our most meaningful findings, and graphs for all phonological features can be found in Appendix~\ref{sec:appendix-comparison-graphs}. Notably, hierarchical vision transformers (MViTv2 in MaskFeat and VideoSwin in BEVT) perform significantly better than the plain ViTs found in VideoMAE and SVT across all features where models achieve non-trivial performance. Even though VideoMAE achieves a much higher WLASL2000 fine-tuning accuracy, it produces less linguistically relevant representations than those from BEVT, for instance.
+
+Additionally, BEVT and MaskFeat display a trend similar to that observed in self-supervised speech models~\cite{pasad2021layer}. Specifically, the middle layers of these models provide representations that better capture linguistic features compared to their initial or final layers. Much like in self-supervised speech models, it is likely that initial layers tend to focus on lower-level features in the input, and that final layers produce features that are most relevant to the corresponding pre-training tasks, at the expense of some linguistically relevant characteristics. We do not see the same phenomenon occur with VideoMAE and SVT. Layers that produce representations most related to our phonological features are the final layers. In the case of SVT, this is to be expected, as the pre-training task is explicitly to produce meaningfully different representations for each video in the dataset. However, VideoMAE's task being closely related to BEVT's and MaskFeat's makes this behavior surprising. For VideoMAE, final encoder layers do not diverge from producing representations that capture linguistic features in favor of task-related features, with this behavior likely occurring entirely in the decoder.
+
+Comparing across phonological features also reveals interesting characteristics of our models. All of our models can provide meaningful representations for Major Location, as shown in Figure~\ref{fig:probing-maj-loc}. Major Location refers to where the dominant signing hand is broadly located, and takes one of five values: head, arm, body, non-dominant hand, or neutral space. In contrast, when we shift to the more specific Minor Location, which divides every Major Location except neutral space into eight smaller locations, it is evident that plain ViT-based models are largely unable to capture this feature. This effect can be seen in Figure~\ref{fig:probing-min-loc}. This is likely a product of the input patch size for each model, as VideoSwin and MViTv2 take in much smaller patches than plain ViT, and are thus unable to differentiate locations at this level of granularity.
+
+When looking at hand configuration features, this deterioration is more dramatic and occurs across all models. For Handshape in Figure~\ref{fig:probing-handshape}, for example, most models are able to capture this feature, with the exception of VideoMAE. However, the graph for Selected Finger, in Figure~\ref{fig:probing-sel-finger} shows that none of our models provide meaningful representations in terms of this feature. This is likely a product of Selected Fingers being a feature that requires finer-grained differences that are not relevant to any of our pre-training tasks, such as differences in positions between fingers of the same hand. Additionally, hand configuration features largely rely on making sense of 3D information, particularly as the hand configuration is invariant to the orientation of the hand in relation to the camera.
+
+Along the same lines, most movement-related phonological features are not properly captured by any of our models either. Path Movement, in Figure~\ref{fig:probing-path-mov}, is an example of this. Path Movement refers to the shape followed by the motion of the dominant hand. None of our models are able to produce meaningful representations for it, as shown by how linear probing accuracies remain close to the baseline accuracy. Movement features, and especially Path Movement, also require 3D information, and can use different planes as reference for signs that have the same type of movement.
+
+We then also compare models' linear probing performance before and after fine-tuning on gloss-based WLASL2000. Our most significant findings are shown in Figure~\ref{fig:comparison}, and results for all phonological features can be found in Appendix~\ref{sec:appendix-comparison-graphs}. We have also included linear probing accuracy of an I3D model trained on WLASL2000 for an additional comparison. Most strikingly, we find that fine-tuning plain ViTs on supervised data does not necessarily produce better representations. This is partially consistent with previous work on ViTs~\cite{caron2021emerging}, which claims that the most important step in producing meaningful representations with vision transformers is self-supervised pre-training. However, we find that unlike claims in previous work on self-supervised video models~\cite{Tong2022VideoMAE}, the right transformer architecture is just as important as the right pre-training task, at least for producing sign language representations. Plain ViTs seem to be insufficient for this, despite some of them showing good performance in ISLR. In contrast, hierarchical video transformers with a reconstruction task almost always find significant improvement in linear probing accuracy after fine-tuning on ISLR, even if ISLR performance is inferior to that of plain ViTs (as is the case for our BEVT model).
+
+Alongside improving the quality of models in terms of their ability to represent linguistic features, fine-tuning also changes the shape of our hierarchical models' linear probing curves. Though the fine-tuning task is not explicitly to predict any of these features, the task of classifying isolated signs benefits from having representations that capture them. Thus, as we move towards the final layers of these models, linear probing accuracy almost always monotonically increases. This is, again, consistent with what has been reported for self-supervised speech models~\cite{pasad2021layer}, where fine-tuning on speech recognition modifies the shape of the linear probing curves in similar ways.
+
+The superiority of hierarchical vision transformers over ViT remains consistent after fine-tuning, too. As Figure~\ref{fig:comparison} shows, VideoMAE and SVT consistently perform worse than BEVT and MaskFeat across all features, and perhaps more importantly, do not achieve performance comparable to the I3D baseline for any feature. In comparison, both BEVT and MaskFeat generally perform comparably to or better than I3D for all phonological features.
+
+Fine-tuning also allows some models which were previously unable to capture movement and time-dependent features to do so. An example of this is Path Movement in Figure~\ref{fig:comparison-path-mov}, where linear probing performance greatly improves for MaskFeat and BEVT. This is at least partially related to model architecture, as shown by the fact that VideoMAE and SVT still struggle in this setting. However, we suspect this is most significantly due to video sampling approaches during pre-training. As self-supervised video pre-training pipelines are typically designed with broad human action videos in mind, frames from these videos are sampled sparsely across time. However, this is insufficient to capture time-dependent properties of signs from continuous signing videos. Sixteen frames sampled uniformly from multiple full sentences is very little, and it leads to our models only getting one or two frames per sign from any given continuous signing video. This likely misses key linguistic information. Fine-tuning on ISLR then mitigates this, as we have much shorter videos all containing only one sign. During fine-tuning, the models get as input sixteen frames all corresponding to the same sign, and thus are able to capture motion-based features much better than from continuous signing.

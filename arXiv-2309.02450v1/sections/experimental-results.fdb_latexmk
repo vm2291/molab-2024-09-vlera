@@ -1,0 +1,15 @@
+# Fdb version 4
+["pdflatex"] 1691956478 "experimental-results.tex" "experimental-results.pdf" "experimental-results" 1691956478 2
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/fontname/texfonts.map" 1678549815 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1678549815 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1678549815 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/web2c/texmf.cnf" 1678549815 40748 4081c8bc921e56c865f975bd762e388c ""
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1678549815 7884066 8197b5e86c7bf6d7352283907f10d5c2 ""
+  "experimental-results.aux" 1691902649 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "experimental-results.tex" 1691956477 15380 00b052065423cbc383e7a05397a55db8 ""
+  "figures/pt_accuracy_plot_majorlocation.pgf" 0 -1 0 ""
+  (generated)
+  "experimental-results.aux"
+  "experimental-results.log"
+  "experimental-results.pdf"
+  (rewritten before read)

@@ -32,7 +32,7 @@ struct MainView: View {
                 }
             }
             .padding()
-            .navigationTitle("Home Page")
+            .navigationTitle("Home")
             .padding()
         }
     }

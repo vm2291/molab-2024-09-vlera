@@ -1,0 +1,105 @@
+% WACV 2024 Paper Template
+% based on the CVPR 2023 template (https://media.icml.cc/Conferences/CVPR2023/cvpr2023-author_kit-v1_1-1.zip) with 2-track changes from the WACV 2023 template (https://github.com/wacv-pcs/WACV-2023-Author-Kit)
+% based on the CVPR template provided by Ming-Ming Cheng (https://github.com/MCG-NKU/CVPR_Template)
+% modified and extended by Stefan Roth (stefan.roth@NOSPAMtu-darmstadt.de)
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+%\usepackage[review,algorithms]{wacv}      % To produce the REVIEW version for the algorithms track
+%\usepackage[review,applications]{wacv}      % To produce the REVIEW version for the applications track
+\usepackage{wacv}              % To produce the CAMERA-READY version
+%\usepackage[pagenumbers]{wacv} % To force page numbers, e.g. for an arXiv version
+
+% Include other packages here, before hyperref.
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{multicol}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, e.g. with the
+% file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete
+% ReviewTempalte.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you
+%  should be clear).
+\usepackage[pagebackref,breaklinks,colorlinks]{hyperref}
+
+
+% Support for easy cross-referencing
+\usepackage[capitalize]{cleveref}
+\crefname{section}{Sec.}{Secs.}
+\Crefname{section}{Section}{Sections}
+\Crefname{table}{Table}{Tables}
+\crefname{table}{Tab.}{Tabs.}
+
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\wacvPaperID{1589} % *** Enter the WACV Paper ID here
+\def\confName{WACV}
+\def\confYear{2024}
+
+
+\newcommand*{\affaddr}[1]{#1} % No op here. Customize it for different styles.
+\newcommand*{\affmark}[1][*]{\textsuperscript{#1}}
+\newcommand*{\email}[1]{\texttt{#1}}
+
+\begin{document}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{Self-Supervised Video Transformers for Isolated Sign Language Recognition}
+
+\author{%
+Marcelo Sandoval-Casta\~neda\affmark[1]\affmark[*], Yanhong Li\affmark[2], Diane Brentari\affmark[2], Karen Livescu\affmark[1], and Gregory Shakhnarovich\affmark[1]\\
+\affaddr{\affmark[1]Toyota Technological Institute at Chicago, IL, USA}\\
+\affaddr{\affmark[2]University of Chicago, IL, USA}\\
+\email{\affmark[*]marcelo@ttic.edu}\\
+}
+
+
+
+\maketitle
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+   This paper presents an in-depth analysis of various self-supervision methods for isolated sign language recognition (ISLR). We consider four recently introduced transformer-based approaches to self-supervised learning from videos, and four pre-training data regimes, and study all the combinations on the WLASL2000 dataset.
+   %We scrutinize four different self-supervised transformer models: VideoMAE, SVT, BEVT, and MaskFeat, each pre-trained under four distinct settings: Kinetics400 pre-training, OpenASL pre-training, two-stage pre-training (first on Kinetics400, then extended with OpenASL), and mixed pre-training (Kinetics400 and OpenASL at the same time). We evaluate the performance of these models on WLASL2000 after fine-tuning.
+   Our findings reveal that MaskFeat achieves performance superior to pose-based and supervised video models, with a top-1 accuracy of 79.02\% on gloss-based WLASL2000. Furthermore, we analyze these models' ability to produce representations of ASL signs using linear probing on diverse phonological features. This study underscores the value of architecture and pre-training task choices in ISLR. Specifically, our results on WLASL2000 highlight the power of masked reconstruction pre-training, and our linear probing results demonstrate the importance of hierarchical vision transformers for sign language representation.
+\end{abstract}
+
+
+%%%%%%%%% BODY TEXT
+\input{sections/introduction}
+
+\input{sections/related-work}
+
+\input{sections/method}
+
+\input{sections/experimental-setup}
+
+\input{sections/experimental-results}
+
+\input{sections/conclusion}
+
+%\input{sections/acknowledgements}
+
+%%%%%%%%% REFERENCES
+{\small
+\bibliographystyle{ieee_fullname}
+\bibliography{egbib}
+}
+
+\clearpage
+
+\appendix
+\input{sections/appendix}
+
+\end{document}
