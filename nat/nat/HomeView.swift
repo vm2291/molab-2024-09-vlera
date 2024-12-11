@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @AppStorage("NatureTimeLogs") private var logsData: String = "{}" // Store logs as a JSON string
+    @AppStorage("NatureTimeLogs") private var logsData: String = "{}"
     @State private var logs: [String: [LogEntry]] = [:]
     @AppStorage("isDarkMode") private var isDarkMode: Bool = true
 
@@ -16,7 +16,6 @@ struct HomeView: View {
 
                     Spacer()
 
-                    // Toggle Dark/Light Mode with Sun/Moon icon
                     Button(action: { isDarkMode.toggle() }) {
                         Image(systemName: isDarkMode ? "moon.fill" : "sun.max.fill")
                             .foregroundColor(.green)
@@ -29,18 +28,18 @@ struct HomeView: View {
                     VStack (spacing: 15) {
                         Text("Time in Nature Today")
                             .font(.headline)
-                            .foregroundColor(isDarkMode ? .white : .white) // Black for dark mode, white for light mode
+                            .foregroundColor(isDarkMode ? .white : .white)
                         Text(totalTimeToday())
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(isDarkMode ? .white : .white) // Black for dark mode, white for light mode
+                            .foregroundColor(isDarkMode ? .white : .white)
                         Text("View More")
                             .font(.subheadline)
                             .foregroundColor(.green)
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(isDarkMode ? Color.green.opacity(0.2) : Color("DarkGreen").opacity(0.8)) // Dark green for light theme
+                    .background(isDarkMode ? Color.green.opacity(0.2) : Color("DarkGreen").opacity(0.8))
                     .cornerRadius(15)
                     .shadow(radius: 5)
                 }

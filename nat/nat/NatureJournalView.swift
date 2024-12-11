@@ -15,13 +15,11 @@ struct NatureJournalView: View {
                     .font(.largeTitle)
                     .padding()
 
-                // Articles Section
                 List(articles, id: \.self) { article in
                     Text(article)
                 }
                 .frame(height: 200)
 
-                // Journal Entry Section
                 Text("Write Your Thoughts:")
                     .font(.headline)
                     .padding(.top)
@@ -33,7 +31,7 @@ struct NatureJournalView: View {
                 Spacer()
             }
             .padding()
-            .navigationBarHidden(true) // Hide the navigation bar title
+            .navigationBarHidden(true)
         }
     }
 }

@@ -4,7 +4,7 @@ import Charts
 struct NatureTimeDetailsView: View {
     @AppStorage("NatureTimeLogs") private var logsData: String = "{}"
     @State private var logs: [String: [LogEntry]] = [:]
-    @State private var selectedDate: String = "" // Initialize as empty string
+    @State private var selectedDate: String = ""
 
     var body: some View {
         VStack(spacing: 20) {
@@ -16,7 +16,6 @@ struct NatureTimeDetailsView: View {
                 .font(.headline)
 
             if let dayLogs = logs[selectedDate], !dayLogs.isEmpty {
-                // Log List
                 List(dayLogs) { log in
                     HStack {
                         Text("Start: \(formatTime(log.startTime))")
@@ -25,7 +24,6 @@ struct NatureTimeDetailsView: View {
                     }
                 }
 
-                // Graph Representation
                 Chart {
                     ForEach(dayLogs) { log in
                         BarMark(
@@ -59,7 +57,7 @@ struct NatureTimeDetailsView: View {
         }
         .padding()
         .onAppear {
-            selectedDate = formatDate(Date()) // Initialize selectedDate here
+            selectedDate = formatDate(Date())
             loadLogs()
         }
     }

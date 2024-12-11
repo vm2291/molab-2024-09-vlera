@@ -5,8 +5,8 @@ struct NatureTimeTrackerView: View {
     @State private var timer: Timer?
     @State private var isTracking = false
 
-    @AppStorage("NatureTimeLogs") private var logsData: String = "{}" // Store logs as a JSON string
-    @State private var logs: [String: [LogEntry]] = [:] // Decoded logs
+    @AppStorage("NatureTimeLogs") private var logsData: String = "{}"
+    @State private var logs: [String: [LogEntry]] = [:]
 
     @State private var currentDate: String = formatDate(Date())
 
@@ -17,11 +17,9 @@ struct NatureTimeTrackerView: View {
                     .font(.largeTitle)
                     .padding()
 
-                // Show today's date
                 Text("Today: \(currentDate)")
                     .font(.headline)
 
-                // Time tracking display
                 Text(formatTime(timeSpent))
                     .font(.system(size: 50))
                     .padding()
@@ -49,8 +47,8 @@ struct NatureTimeTrackerView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("") // Empty navigation title
-            .navigationBarHidden(true) // Hides the navigation bar
+            .navigationTitle("")
+            .navigationBarHidden(true)
             .onAppear {
                 currentDate = NatureTimeTrackerView.formatDate(Date())
                 loadLogs()
@@ -70,7 +68,6 @@ struct NatureTimeTrackerView: View {
         timer?.invalidate()
         timer = nil
 
-        // Log the session
         let log = LogEntry(startTime: Date(), duration: timeSpent)
         saveLog(for: currentDate, log: log)
         timeSpent = 0

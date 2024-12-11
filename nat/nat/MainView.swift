@@ -8,7 +8,7 @@ struct MainView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
-                        .foregroundColor(.green) // Replaced blue with green
+                        .foregroundColor(.green)
                     Text("Home")
                 }
             NatureAudiosView()
