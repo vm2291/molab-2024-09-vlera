@@ -25,9 +25,8 @@ struct HomeView: View {
                 }
                 .padding()
 
-                // Display today's total time in nature (Clickable NavigationLink)
                 NavigationLink(destination: NatureTimeDetailsView()) {
-                    VStack (spacing: 13) {
+                    VStack (spacing: 15) {
                         Text("Time in Nature Today")
                             .font(.headline)
                             .foregroundColor(isDarkMode ? .white : .white) // Black for dark mode, white for light mode
