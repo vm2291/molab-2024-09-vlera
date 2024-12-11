@@ -7,7 +7,7 @@ struct CountdownView: View {
 
     @State private var remainingTime: TimeInterval = 0
     @State private var timer: Timer?
-    @State private var hasLoggedSleep = false // Prevents duplicate logging
+    @State private var hasLoggedSleep = false
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -36,7 +36,7 @@ struct CountdownView: View {
     func startCountdown() {
         remainingTime = max(0, sleepDuration - Date().timeIntervalSince(countdownStartTime))
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if remainingTime > 1 { // Allow a small buffer
+            if remainingTime > 1 {
                 remainingTime -= 1
             } else {
                 stopTimer()
@@ -64,7 +64,7 @@ struct CountdownView: View {
     }
 
     func logSleepOnCountdownEnd() {
-        onLogSleep(sleepDuration) // Mimic button logging
+        onLogSleep(sleepDuration) 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             clearCountdownAndGoBack()
         }
@@ -74,7 +74,7 @@ struct CountdownView: View {
 
 
     func logSleepAndExit(elapsedTime: TimeInterval) {
-        onLogSleep(elapsedTime) // Log the sleep duration using the callback
+        onLogSleep(elapsedTime)
         clearCountdownAndGoBack()
     }
 
