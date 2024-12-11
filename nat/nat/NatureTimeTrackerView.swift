@@ -4,13 +4,14 @@ struct NatureTimeTrackerView: View {
     @State private var timeSpent: TimeInterval = 0
     @State private var timer: Timer?
     @State private var isTracking = false
-
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = true
     @AppStorage("NatureTimeLogs") private var logsData: String = "{}"
     @State private var logs: [String: [LogEntry]] = [:]
 
     @State private var currentDate: String = formatDate(Date())
 
     var body: some View {
+        
         NavigationView {
             VStack(spacing: 20) {
                 Text("Nature Time Tracker")
@@ -38,7 +39,7 @@ struct NatureTimeTrackerView: View {
                         Text("Start Tracking")
                             .font(.title2)
                             .padding()
-                            .background(Color.green)
+                            .background(isDarkMode ? Color.green.opacity(0.42) : Color("DarkGreen").opacity(0.8))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
