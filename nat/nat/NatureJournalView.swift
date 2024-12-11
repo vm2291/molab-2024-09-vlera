@@ -3,9 +3,9 @@ import SwiftUI
 struct NatureJournalView: View {
     @State private var journalText: String = ""
     let articles = [
-        "Benefits of Nature on Mental Health",
-        "How Spending Time Outdoors Improves Focus",
-        "The Role of Nature in Reducing Stress"
+        "What did you observe today?",
+        "What was something interesting?",
+        "Where did you go?"
     ]
 
     var body: some View {
@@ -33,7 +33,7 @@ struct NatureJournalView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Checklist")
+            .navigationTitle("Journal")
         }
     }
 }

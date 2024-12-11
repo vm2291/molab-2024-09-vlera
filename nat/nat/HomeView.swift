@@ -9,7 +9,7 @@ struct HomeView: View {
         NavigationView {
             VStack(spacing: 20) {
                 HStack {
-                    Text("Dashboard")
+                    Text("Nature Along")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding()
@@ -27,7 +27,7 @@ struct HomeView: View {
 
                 // Display today's total time in nature (Clickable NavigationLink)
                 NavigationLink(destination: NatureTimeDetailsView()) {
-                    VStack {
+                    VStack (spacing: 13) {
                         Text("Time in Nature Today")
                             .font(.headline)
                             .foregroundColor(isDarkMode ? .white : .white) // Black for dark mode, white for light mode
