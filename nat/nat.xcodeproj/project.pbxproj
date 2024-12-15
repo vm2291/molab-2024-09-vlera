@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C97CF0E2D0F78B900171945 /* ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C97CF0D2D0F78B900171945 /* ocean.mp3 */; };
+		4C97CF102D0F79E400171945 /* birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C97CF0F2D0F79E400171945 /* birds.mp3 */; };
 		4CD4C4EB2CFACF37000665F6 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4C4EA2CFACF37000665F6 /* rain.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C97CF0D2D0F78B900171945 /* ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean.mp3; sourceTree = "<group>"; };
+		4C97CF0F2D0F79E400171945 /* birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birds.mp3; sourceTree = "<group>"; };
 		4CD4C4D92CFAB820000665F6 /* nat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD4C4EA2CFACF37000665F6 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,7 +41,9 @@
 		4CD4C4D02CFAB820000665F6 = {
 			isa = PBXGroup;
 			children = (
+				4C97CF0F2D0F79E400171945 /* birds.mp3 */,
 				4CD4C4EA2CFACF37000665F6 /* rain.mp3 */,
+				4C97CF0D2D0F78B900171945 /* ocean.mp3 */,
 				4CD4C4DB2CFAB820000665F6 /* nat */,
 				4CD4C4DA2CFAB820000665F6 /* Products */,
 			);
@@ -115,6 +121,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C97CF0E2D0F78B900171945 /* ocean.mp3 in Resources */,
+				4C97CF102D0F79E400171945 /* birds.mp3 in Resources */,
 				4CD4C4EB2CFACF37000665F6 /* rain.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
