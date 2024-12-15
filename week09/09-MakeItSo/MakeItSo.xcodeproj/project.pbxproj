@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C6B380D2D0F327B0090D06B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6B380C2D0F327B0090D06B /* GoogleService-Info.plist */; };
 		4C6B380F2D0F3C7E0090D06B /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6B380E2D0F3C7E0090D06B /* FirebaseFirestoreCombine-Community */; };
+		4CEB96032D0F586C00ADE9C3 /* ToastExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB96022D0F586400ADE9C3 /* ToastExtension.swift */; };
 		8823E59F2A13CAFE0021D416 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8823E59E2A13CAFE0021D416 /* FirebaseAnalytics */; };
 		8823E5A12A13CAFE0021D416 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8823E5A02A13CAFE0021D416 /* FirebaseAnalyticsSwift */; };
 		8823E5A32A13CAFE0021D416 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8823E5A22A13CAFE0021D416 /* FirebaseAuth */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4C6B380C2D0F327B0090D06B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4CEB96022D0F586400ADE9C3 /* ToastExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastExtension.swift; sourceTree = "<group>"; };
 		8842940F29AFEEA8002B16B9 /* MakeItSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeItSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842941229AFEEA8002B16B9 /* MakeItSoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItSoApp.swift; sourceTree = "<group>"; };
 		8842941429AFEEA8002B16B9 /* RemindersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersListView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		8842941129AFEEA8002B16B9 /* MakeItSo */ = {
 			isa = PBXGroup;
 			children = (
+				4CEB96022D0F586400ADE9C3 /* ToastExtension.swift */,
 				886FAA6C2A127422004ACF43 /* Features */,
 				8842941229AFEEA8002B16B9 /* MakeItSoApp.swift */,
 				8842941629AFEEA9002B16B9 /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 				88AE77122A138B0B00C51000 /* ReminderToggleStyle.swift in Sources */,
 				8864E1722A1CD5CD00BE28E2 /* RemindersRepository.swift in Sources */,
 				8842941329AFEEA8002B16B9 /* MakeItSoApp.swift in Sources */,
+				4CEB96032D0F586C00ADE9C3 /* ToastExtension.swift in Sources */,
 				887D19282A137D500034829D /* RemindersListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
