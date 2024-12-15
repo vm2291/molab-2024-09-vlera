@@ -7,6 +7,7 @@ struct natApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .background(isDarkMode ? Color("softBlack") : Color.white)
                 .accentColor(isDarkMode ? Color.green.opacity(0.9) : Color("DarkGreen").opacity(0.95))
                 .preferredColorScheme(isDarkMode ? .dark : .light)
                 .environment(\.colorScheme, isDarkMode ? .dark : .light)
